@@ -2658,6 +2658,29 @@ class PlayState extends MusicBeatState
 
 	public function triggerEventNote(eventName:String, value1:String, value2:String) {
 		switch(eventName) {
+			case 'Show text on the screen':
+    			var ScreenText:FlxText;
+    			var Text:String = value1;
+    			var val:Float = Std.parseFloat(value2);
+    			ScreenText = new FlxText(0, 0, 0, Text, 40);
+    			ScreenText.setFormat(Paths.font("vcr.ttf"), 40, FlxColor.WHITE, FlxTextAlign.CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+    			ScreenText.scrollFactor.set();
+    			ScreenText.screenCenter();
+    			ScreenText.alpha = 0;
+    			ScreenText.cameras = [camHUD];
+    			add(ScreenText);
+    			FlxTween.tween(ScreenText, {alpha: 1}, 0.5, {type: FlxTweenType.ONESHOT, ease: FlxEase.quadInOut});
+    			new FlxTimer().start(val, function(tmr:FlxTimer)
+    			{
+    			    FlxTween.tween(ScreenText, {alpha: 0}, 0.5, {
+    			        type: FlxTweenType.ONESHOT,
+    			        ease: FlxEase.quadInOut,
+    			        onComplete: function(twn:FlxTween)
+    			        {
+    			            remove(ScreenText);
+    			        }
+    			    });
+    			});
 			case 'Hey!':
 				var value:Int = 2;
 				switch(value1.toLowerCase().trim()) {
