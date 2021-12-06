@@ -1,0 +1,20 @@
+{
+	"songs": [
+		["Electroman", "senpai", [234, 240, 66]]
+	],
+
+	"weekCharacters": [
+		"",
+		"bf",
+		"gf"
+	],
+	"weekBackground": "school",
+
+	"storyName": "Hating Simulator Mod",
+	"weekBefore": "pack1",
+	"weekName": "Gauntlet 1",
+	"startUnlocked": false,
+
+	"hideStoryMode": false,
+	"hideFreeplay": false
+}

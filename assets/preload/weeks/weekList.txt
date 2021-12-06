@@ -1,2 +1,3 @@
 tutorial
-week1
+pack1
+gauntlet1
