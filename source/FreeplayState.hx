@@ -56,6 +56,8 @@ class FreeplayState extends MusicBeatState
 		DiscordClient.changePresence("In the Menus", null);
 		#end
 
+		checkSpecials();
+		
 		for (i in 0...WeekData.weeksList.length) {
 			var leWeek:WeekData = WeekData.weeksLoaded.get(WeekData.weeksList[i]);
 			var leSongs:Array<String> = [];
@@ -167,6 +169,8 @@ class FreeplayState extends MusicBeatState
 		text.setFormat(Paths.font("vcr.ttf"), 18, FlxColor.WHITE, RIGHT);
 		text.scrollFactor.set();
 		add(text);
+
+		
 		super.create();
 	}
 
@@ -180,21 +184,29 @@ class FreeplayState extends MusicBeatState
 		songs.push(new SongMetadata(songName, weekNum, songCharacter, color));
 	}
 
-	/*public function addWeek(songs:Array<String>, weekNum:Int, weekColor:Int, ?songCharacters:Array<String>)
-	{
-		if (songCharacters == null)
-			songCharacters = ['bf'];
+	public function checkSpecials()
+	{		
+		var i=0;
+		for (unlocked in ClientPrefs.secretChars)
+			{
+				if (unlocked == true)
+				{
+					switch (i)
+					{
+						case 0:
+							addSong("Cobble", 1, 'cally', -460552);
+						case 1:
+							addSong("Mura", 1, 'mura', 7418536);
+						case 2:
+							addSong("Cherry", 1, 'merg', 16393509);
+						case 3:
+							addSong("Conquerer", 1, 'zsh', 16419109);
+					}
+				}
 
-		var num:Int = 0;
-		for (song in songs)
-		{
-			addSong(song, weekNum, songCharacters[num]);
-			this.songs[this.songs.length-1].color = weekColor;
-
-			if (songCharacters.length != 1)
-				num++;
-		}
-	}*/
+				i++;
+			}
+	}
 
 	var instPlaying:Int = -1;
 	private static var vocals:FlxSound = null;

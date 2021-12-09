@@ -37,6 +37,10 @@ class MainMenuState extends MusicBeatState
 	var camFollow:FlxObject;
 	var camFollowPos:FlxObject;
 
+	var specialsOverlay:FlxSprite;
+	var specialsText:FlxText;
+
+	public static var instance:MainMenuState;
 	override function create()
 	{
 		#if desktop
@@ -44,6 +48,7 @@ class MainMenuState extends MusicBeatState
 		DiscordClient.changePresence("In the Menus", null);
 		#end
 
+		instance = this;
 		camGame = new FlxCamera();
 		camAchievement = new FlxCamera();
 		camAchievement.bgColor.alpha = 0;
@@ -132,9 +137,19 @@ class MainMenuState extends MusicBeatState
 		}
 		#end
 
+		SpecialCheck.checkSpecials();
+		// fuck it, the substate won't show dammit :(((
+		// if (ClientPrefs.secretChars.contains(true)) // This SHOULD work
+		// {
+		// 	trace("okay there are unlocked characters");
+		// 	openSubState(new SecretSongNoticeSubstate());
+		// 	trace('why wont you work :(((');
+		// }
+
 		super.create();
 	}
 
+	public var acceptsInput:Bool = true;
 	#if ACHIEVEMENTS_ALLOWED
 	// Unlocks "Freaky on a Friday Night" achievement
 	function giveAchievement() {
@@ -158,26 +173,26 @@ class MainMenuState extends MusicBeatState
 
 		if (!selectedSomethin)
 		{
-			if (controls.UI_UP_P)
+			if (controls.UI_UP_P && acceptsInput)
 			{
 				FlxG.sound.play(Paths.sound('scrollMenu'));
 				changeItem(-1);
 			}
 
-			if (controls.UI_DOWN_P)
+			if (controls.UI_DOWN_P && acceptsInput)
 			{
 				FlxG.sound.play(Paths.sound('scrollMenu'));
 				changeItem(1);
 			}
 
-			if (controls.BACK)
+			if (controls.BACK && acceptsInput)
 			{
 				selectedSomethin = true;
 				FlxG.sound.play(Paths.sound('cancelMenu'));
 				MusicBeatState.switchState(new TitleState());
 			}
 
-			if (controls.ACCEPT)
+			if (controls.ACCEPT && acceptsInput)
 			{
 				if (optionShit[curSelected] == 'donate')
 				{
@@ -227,7 +242,7 @@ class MainMenuState extends MusicBeatState
 				}
 			}
 			#if desktop
-			else if (FlxG.keys.justPressed.SEVEN)
+			else if (FlxG.keys.justPressed.SEVEN && acceptsInput)
 			{
 				selectedSomethin = true;
 				MusicBeatState.switchState(new MasterEditorMenu());
