@@ -4209,6 +4209,60 @@ class PlayState extends MusicBeatState
 				spr.centerOffsets();
 
 				spr.moveKeyPositions(spr, newMania, strumnum);
+
+				switch (newMania)
+				{
+					case 0: // 4
+						switch (spr.ID)
+						{
+							case 4 | 5 | 6 | 7 | 8:
+								spr.alpha = 0;
+						}
+					case 1: // 6
+						switch (spr.ID)
+						{
+							case 6 | 7 | 8:
+								spr.alpha = 0;
+						}
+					case 2: // 9
+						// Nothing lol all the keys are there
+					case 3: // 5
+						switch (spr.ID)
+						{
+							case 5 | 6 | 7 | 8:
+								spr.alpha = 0;
+						}
+					case 4: // 7
+						switch (spr.ID)
+						{
+							case 7 | 8:
+								spr.alpha = 0;
+						}
+					case 5: // 8
+						switch (spr.ID)
+						{
+							case 8:
+								spr.alpha = 0;
+						}
+					case 6: // 1
+						switch (spr.ID)
+						{
+							case 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8:
+								spr.alpha = 0;
+						}
+					case 7: // 2
+						switch (spr.ID)
+						{
+							case 2 | 3 | 4 | 5 | 6 | 7 | 8:
+								spr.alpha = 0;
+						}
+					case 8: // 3
+						switch (spr.ID)
+						{
+							case 3 | 4 | 5 | 6 | 7 | 8:
+								spr.alpha = 0;
+						}
+				}
 			});	
 		}
 	}
