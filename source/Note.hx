@@ -128,6 +128,19 @@ class Note extends FlxSprite
 						missHealth = 0.3;
 					}
 					hitCausesMiss = true;
+				case 'Guardian Note':
+					ignoreNote = mustPress;
+					reloadNote('POISON');
+					noteSplashTexture = 'noteSplashes';
+					colorSwap.hue = 0;
+					colorSwap.saturation = 0;
+					colorSwap.brightness = 0;
+					if(isSustainNote) {
+						missHealth = 0.07;
+					} else {
+						missHealth = 0.2;
+					}
+					hitCausesMiss = true;
 				case 'No Animation':
 					noAnimation = true;
 			}
@@ -350,7 +363,7 @@ class Note extends FlxSprite
 		if (!isSustainNote && !inEditor) ///fix note scales
 		{
 			var noteTypeShit:Float = 1;
-			if (noteType == "Hurt Note")
+			if (noteType == "Hurt Note" || noteType == "Guardian Note")
 				noteTypeShit = ((9.2 / 1.7) / 1.7);
 			if (mustPress)
 			{

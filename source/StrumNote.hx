@@ -252,6 +252,7 @@ class StrumNote extends FlxSprite
 		if (maniaSwitchPositions[newMania][spr.ID] == "alpha0")
 		{
 			spr.alpha = 0;
+			trace("shouldn't be here hmmmm thonk" + spr.ID);
 		}            
 		else
 		{

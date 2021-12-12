@@ -33,10 +33,10 @@ class ClientPrefs {
 
 	public static function startControls() {
 		//Key Bind, Name for ControlsSubState
-		keyBinds.set('note_left', [A, LEFT]);
-		keyBinds.set('note_down', [S, DOWN]);
-		keyBinds.set('note_up', [W, UP]);
-		keyBinds.set('note_right', [D, RIGHT]);
+		keyBinds.set('note_left', [D, Z]);
+		keyBinds.set('note_down', [F, X]);
+		keyBinds.set('note_up', [J, NUMPADTWO]);
+		keyBinds.set('note_right', [K, NUMPADTHREE]);
 		
 		keyBinds.set('ui_left', [A, LEFT]);
 		keyBinds.set('ui_down', [S, DOWN]);
@@ -46,25 +46,25 @@ class ClientPrefs {
 		keyBinds.set('accept', [SPACE, ENTER]);
 		keyBinds.set('back', [BACKSPACE, ESCAPE]);
 		keyBinds.set('pause', [ENTER, ESCAPE]);
-		keyBinds.set('reset', [R, NONE]);
+		keyBinds.set('reset', [NONE, NONE]);
 
-		keyBinds.set('6k0', [S, W]);
-		keyBinds.set('6k1', [D, E]);
-		keyBinds.set('6k2', [F, R]);
-		keyBinds.set('6k3', [SPACE, G]);
-		keyBinds.set('6k4', [J, U]);
-		keyBinds.set('6k5', [K, I]);
-		keyBinds.set('6k6', [L, O]);
+		keyBinds.set('6k0', [S, Z]);
+		keyBinds.set('6k1', [D, X]);
+		keyBinds.set('6k2', [F, C]);
+		keyBinds.set('6k3', [SPACE, NONE]);
+		keyBinds.set('6k4', [J, NUMPADONE]);
+		keyBinds.set('6k5', [K, NUMPADTWO]);
+		keyBinds.set('6k6', [L, NUMPADTHREE]);
 
-		keyBinds.set('9k0', [A, Q]);
-		keyBinds.set('9k1', [S, W]);
-		keyBinds.set('9k2', [D, E]);
-		keyBinds.set('9k3', [F, R]);
-		keyBinds.set('9k4', [SPACE, G]);
-		keyBinds.set('9k5', [H, Y]);
-		keyBinds.set('9k6', [J, U]);
-		keyBinds.set('9k7', [K, I]);
-		keyBinds.set('9k8', [L, O]);
+		keyBinds.set('9k0', [A, Z]);
+		keyBinds.set('9k1', [S, X]);
+		keyBinds.set('9k2', [D, C]);
+		keyBinds.set('9k3', [F, V]);
+		keyBinds.set('9k4', [SPACE, NONE]);
+		keyBinds.set('9k5', [H, NUMPADONE]);
+		keyBinds.set('9k6', [J, NUMPADTWO]);
+		keyBinds.set('9k7', [K, NUMPADTHREE]);
+		keyBinds.set('9k8', [L, NUMPADPERIOD]);
 
 		// Don't delete this
 		defaultKeys = keyBinds.copy();
@@ -95,7 +95,7 @@ class ClientPrefs {
 		FlxG.save.flush();
 
 		var save:FlxSave = new FlxSave();
-		save.bind('controls_v2', 'ninjamuffin99'); //Placing this in a separate save so that it can be manually deleted without removing your Score and stuff
+		save.bind('controls_v2', 'PsychControls'); //Placing this in a separate save so that it can be manually deleted without removing your Score and stuff
 		save.data.customControls = keyBinds;
 		save.flush();
 		FlxG.log.add("Settings saved!");

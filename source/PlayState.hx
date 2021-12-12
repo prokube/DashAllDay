@@ -136,6 +136,8 @@ class PlayState extends MusicBeatState
 		['LEFT', 'UP', 'RIGHT'],
 	]; 
 
+	public static var isPoisoned:Bool = false;
+
 	public var vocals:FlxSound;
 
 	public var dad:Character;
@@ -3586,6 +3588,18 @@ class PlayState extends MusicBeatState
 							boyfriend.playAnim('hurt', true);
 							boyfriend.specialAnim = true;
 						}
+					case 'Guardian Note': //Just poison lol
+						if(boyfriend.animation.getByName('hurt') != null) {
+							boyfriend.playAnim('hurt', true);
+							boyfriend.specialAnim = true;
+							isPoisoned = true;
+							
+							var poisonShader:ColorSwap = new ColorSwap();
+							poisonShader.hue = 180;
+							boyfriend.shader = poisonShader.shader;
+
+							new FlxTimer().start(4, function(_){isPoisoned = false; poisonShader.hue = 0;});
+						}
 				}
 				
 				note.wasGoodHit = true;
@@ -3610,9 +3624,13 @@ class PlayState extends MusicBeatState
 				var daAlt = '';
 				if(note.noteType == 'Alt Animation') daAlt = '-alt';
 	
+				///
+
 				var animToPlay:String = '';
 
 				animToPlay = "sing" + sDir[mania][Std.int(Math.abs(note.noteData))];
+
+				///
 
 				if(note.noteType == 'GF Sing') {
 					gf.playAnim(animToPlay + daAlt, true);
@@ -3621,6 +3639,8 @@ class PlayState extends MusicBeatState
 					boyfriend.playAnim(animToPlay + daAlt, true);
 					boyfriend.holdTimer = 0;
 				}
+
+				///
 
 				if(note.noteType == 'Hey!') {
 					if(boyfriend.animOffsets.exists('hey')) {
@@ -3890,6 +3910,8 @@ class PlayState extends MusicBeatState
 			return;
 		}
 
+		if (isPoisoned && health > 0.05)
+			health -= 0.015;
 		lastStepHit = curStep;
 		setOnLuas('curStep', curStep);
 		callOnLuas('onStepHit', []);
@@ -4217,50 +4239,67 @@ class PlayState extends MusicBeatState
 						{
 							case 4 | 5 | 6 | 7 | 8:
 								spr.alpha = 0;
+							default:
+								spr.alpha = 1;
 						}
 					case 1: // 6
 						switch (spr.ID)
 						{
 							case 6 | 7 | 8:
 								spr.alpha = 0;
+								default:
+									spr.alpha = 1;
 						}
 					case 2: // 9
-						// Nothing lol all the keys are there
+					default:
+						spr.alpha = 1;
 					case 3: // 5
 						switch (spr.ID)
 						{
 							case 5 | 6 | 7 | 8:
 								spr.alpha = 0;
+								default:
+								spr.alpha = 1;
 						}
 					case 4: // 7
 						switch (spr.ID)
 						{
 							case 7 | 8:
 								spr.alpha = 0;
+								default:
+								spr.alpha = 1;
 						}
 					case 5: // 8
 						switch (spr.ID)
 						{
 							case 8:
 								spr.alpha = 0;
+								default:
+								spr.alpha = 1;
 						}
 					case 6: // 1
 						switch (spr.ID)
 						{
 							case 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8:
 								spr.alpha = 0;
+								default:
+								spr.alpha = 1;
 						}
 					case 7: // 2
 						switch (spr.ID)
 						{
 							case 2 | 3 | 4 | 5 | 6 | 7 | 8:
 								spr.alpha = 0;
+								default:
+								spr.alpha = 1;
 						}
 					case 8: // 3
 						switch (spr.ID)
 						{
 							case 3 | 4 | 5 | 6 | 7 | 8:
 								spr.alpha = 0;
+								default:
+								spr.alpha = 1;
 						}
 				}
 			});	
