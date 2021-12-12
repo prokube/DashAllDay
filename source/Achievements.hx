@@ -11,22 +11,23 @@ using StringTools;
 
 class Achievements {
 	public static var achievementsStuff:Array<Dynamic> = [ //Name, Description, Achievement save tag, Hidden achievement
-		["Freaky on a Friday Night",	"Play on a Friday... Night.",						'friday_night_play',	 true],
-		["She Calls Me Daddy Too",		"Beat Week 1 on Hard with no Misses.",				'week1_nomiss',			false],
-		["No More Tricks",				"Beat Week 2 on Hard with no Misses.",				'week2_nomiss',			false],
-		["Call Me The Hitman",			"Beat Week 3 on Hard with no Misses.",				'week3_nomiss',			false],
-		["Lady Killer",					"Beat Week 4 on Hard with no Misses.",				'week4_nomiss',			false],
-		["Missless Christmas",			"Beat Week 5 on Hard with no Misses.",				'week5_nomiss',			false],
-		["Highscore!!",					"Beat Week 6 on Hard with no Misses.",				'week6_nomiss',			false],
-		["You'll Pay For That...",		"Beat Week 7 on Hard with no Misses.",				'week7_nomiss',			 true],
-		["What a Funkin' Disaster!",	"Complete a Song with a rating lower than 20%.",	'ur_bad',				false],
-		["Perfectionist",				"Complete a Song with a rating of 100%.",			'ur_good',				false],
-		["Roadkill Enthusiast",			"Watch the Henchmen die over 100 times.",			'roadkill_enthusiast',	false],
-		["Oversinging Much...?",		"Hold down a note for 20 seconds.",					'oversinging',			false],
-		["Hyperactive",					"Finish a Song without going Idle.",				'hype',					false],
-		["Just the Two of Us",			"Finish a Song pressing only two keys.",			'two_keys',				false],
-		["Toaster Gamer",				"Have you tried to run the game on a toaster?",		'toastie',				false],
-		["Debugger",					"Beat the \"Test\" Stage from the Chart Editor.",	'debugger',				 true]
+		["A Sip of Rage In the Morn'",				"Play in the morning. (Drink some orange juice first)",	'rageindamorn',	 	true],
+		["To a Different World",					"Beat Pack 1 on Normal.",								'pack1',				false],
+		["Superb Suburbs",							"Beat Pack 2 on Normal.",								'pack2',				false],
+		["These Guys Are Pretty Chill",				"Beat Pack 3 on Normal.",								'pack3',				false],
+		["What Shards Should You Get For This?",	"Beat Gauntlet 1 on Normal.",							'gauntlet1',			false], 
+		["Coins?!",									"Beat Story Mode.",										'coin1',				true], 
+		["Maybe behind that block?",				"Complete the Normal Mania songs.",						'coin2',				true], 
+		["I.. Need... MORE!",						"Find and beat Electrodynamix. Congratulations :)",		'coin3',				true], 
+		["We wants it!",							"You won't know if you keep peeking around like this.",	'coin4',				true], 
+		["We needs it!",							"Focus on other secrets first.",						'coin5',				true], 
+		["Must have the precious",					"Like, for example, that \"special\" folder.",			'coin6',				true], 
+		["They stole it from us!",					"What does it mean? Why is it special?",				'coin7',				true], 
+		["Where is it?! Where is it?!",				"I won't tell you, of course.",							'coin8',				true], 
+		["Thief, thief, thief!",					"You'll have to figure it out yourself.",				'coin9',				true], 
+		["My Precious...",							"I believe in you, though. You've made it this far.",	'coinA',				true], 
+		["There's more!?",							"Don't let me down.",									'coinB',				true], 
+		["Found it under a rock!",					"Sincerely, Trollnox.",									'coinC',				true], 
 	];
 	public static var achievementsMap:Map<String, Bool> = new Map<String, Bool>();
 
