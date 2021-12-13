@@ -13,7 +13,6 @@ class Achievements {
 	public static var achievementsStuff:Array<Dynamic> = [ //Name, Description, Achievement save tag, Hidden achievement
 		["A Sip of Rage In the Morn'",				"Play in the morning. (Drink some orange juice first)",	'rageindamorn',	 		true],
 		["GIMME GIMME GIMME",						"Here you go :)",										'gimme',	 			true],
-		["That's Enough",							"stop lol",											'stop-it',	 			true],
 		["To a Different World",					"Beat Pack 1 on Normal.",								'pack1',				false],
 		["Superb Suburbs",							"Beat Pack 2 on Normal.",								'pack2',				false],
 		["These Guys Are Pretty Chill",				"Beat Pack 3 on Normal.",								'pack3',				false],

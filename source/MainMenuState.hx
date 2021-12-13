@@ -288,15 +288,10 @@ class MainMenuState extends MusicBeatState
 		}
 	}
 
-	var gimmeCount:Int=0;
 	var achievementObj:AchievementObject = null;
-	function startAchievement(achieve:String) {
-		gimmeCount++;
-
+	function startAchievement(achieve:String)
+	{
 		achievementObj = new AchievementObject(achieve);
-		
-		if (gimmeCount == 10)
-			achievementObj = new AchievementObject("stop-it");
 
 		achievementObj.onFinish = achievementEnd;
 		add(achievementObj);
