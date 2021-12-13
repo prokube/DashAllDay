@@ -1,5 +1,6 @@
 package;
 
+import flixel.input.keyboard.FlxKey;
 #if desktop
 import Discord.DiscordClient;
 #end
@@ -39,6 +40,9 @@ class MainMenuState extends MusicBeatState
 
 	var specialsOverlay:FlxSprite;
 	var specialsText:FlxText;
+
+	var gimmeCombo:Array<FlxKey> = [G, I, M, M, E];
+	var lastKeysPressed:Array<FlxKey> = [];
 
 	public static var instance:MainMenuState;
 	override function create()
@@ -256,6 +260,44 @@ class MainMenuState extends MusicBeatState
 		{
 			spr.screenCenter(X);
 		});
+
+		var finalKey:FlxKey = FlxG.keys.firstJustPressed();
+		if(finalKey != FlxKey.NONE) {
+			lastKeysPressed.push(finalKey); //Convert int to FlxKey
+			if(lastKeysPressed.length > gimmeCombo.length)
+			{
+				lastKeysPressed.shift();
+			}
+			
+			if(lastKeysPressed.length == gimmeCombo.length)
+			{
+				var isDifferent:Bool = false;
+				for (i in 0...lastKeysPressed.length) {
+					if(lastKeysPressed[i] != gimmeCombo[i]) {
+						isDifferent = true;
+						break;
+					}
+				}
+				if(!isDifferent) {
+					trace('Easter egg triggered!');
+					FlxG.sound.play(Paths.sound('secretSound'));
+					Achievements.unlockAchievement("gimme");
+					startAchievement("gimme");
+				}
+			}
+		}
+	}
+
+	var achievementObj:AchievementObject = null;
+	function startAchievement(achieve:String) {
+		achievementObj = new AchievementObject(achieve);
+		achievementObj.onFinish = achievementEnd;
+		add(achievementObj);
+		trace('Giving achievement ' + achieve);
+	}
+	function achievementEnd():Void
+	{
+		remove(achievementObj);
 	}
 
 	function changeItem(huh:Int = 0)

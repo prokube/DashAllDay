@@ -11,11 +11,12 @@ using StringTools;
 
 class Achievements {
 	public static var achievementsStuff:Array<Dynamic> = [ //Name, Description, Achievement save tag, Hidden achievement
-		["A Sip of Rage In the Morn'",				"Play in the morning. (Drink some orange juice first)",	'rageindamorn',	 	true],
+		["A Sip of Rage In the Morn'",				"Play in the morning. (Drink some orange juice first)",	'rageindamorn',	 		true],
+		["GIMME GIMME GIMME",						"Here you go :)",										'gimme',	 			true],
 		["To a Different World",					"Beat Pack 1 on Normal.",								'pack1',				false],
 		["Superb Suburbs",							"Beat Pack 2 on Normal.",								'pack2',				false],
 		["These Guys Are Pretty Chill",				"Beat Pack 3 on Normal.",								'pack3',				false],
-		["What Shards Should You Get For This?",	"Beat Gauntlet 1 on Normal.",							'gauntlet1',			false], 
+		["What Shards Should You Get??",			"Beat Gauntlet 1 on Normal.",							'gauntlet1',			false], 
 		["Coins?!",									"Beat Story Mode.",										'coin1',				true], 
 		["Maybe behind that block?",				"Complete the Normal Mania songs.",						'coin2',				true], 
 		["I.. Need... MORE!",						"Find and beat Electrodynamix. Congratulations :)",		'coin3',				true], 
@@ -28,6 +29,7 @@ class Achievements {
 		["My Precious...",							"I believe in you, though. You've made it this far.",	'coinA',				true], 
 		["There's more!?",							"Don't let me down.",									'coinB',				true], 
 		["Found it under a rock!",					"Sincerely, Trollnox.",									'coinC',				true], 
+		["",										"Also there aren't really this many coins LOL",			'coinD',				true], 
 	];
 	public static var achievementsMap:Map<String, Bool> = new Map<String, Bool>();
 
