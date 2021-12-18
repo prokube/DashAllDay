@@ -16,19 +16,19 @@ class Achievements {
 		["To a Different World",					"Beat Pack 1 on Normal.",								'pack1',				false],
 		["Superb Suburbs",							"Beat Pack 2 on Normal.",								'pack2',				false],
 		["These Guys Are Pretty Chill",				"Beat Pack 3 on Normal.",								'pack3',				false],
-		["What Shards Should You Get??",			"Beat Gauntlet 1 on Normal.",							'gauntlet1',			false], 
-		["Coins?!",									"Beat Story Mode.",										'coin1',				true], 
-		["Maybe behind that block?",				"Complete the Normal Mania songs.",						'coin2',				true], 
-		["I.. Need... MORE!",						"Find and beat Electrodynamix. Congratulations :)",		'coin3',				true], 
-		["",										"You won't know if you keep peeking around like this.",	'',					true], 
-		["",										"Focus on other secrets first.",						'',					true], 
-		["",										"Like, for example, that \"special\" folder.",			'',					true], 
-		["",										"What does it mean? Why is it special?",				'',					true], 
-		["",										"It's a <cy>PASSWORD</c> folder.",						'',					true], 
-		["",										"Put something in there, and you might get something.",	'',					true], 
-		["",										"... Might. Don't ask me for codes. I don't know any.",	'',					true], 
-		["",										"Don't cheat.",											'',					true], 
-		["",										"Sincerely, Trollnox.",									'',					true]
+		["What Shards Should You Get??",			"Beat Gauntlet 1 on Normal.",							'gauntlet1',			false],
+		["Coins?!",									"Beat Story Mode.",										'coin1',				true],
+		["Maybe behind that block?",				"Complete the Normal Mania songs.",						'coin2',				true],
+		["I.. Need... MORE!",						"Find and beat Electrodynamix. Congratulations :)",		'coin3',				true],
+		["",										"You won't know if you keep peeking around like this.",	'',						true],
+		["",										"Focus on other secrets first.",						'',						true],
+		["",										"Like, for example, that \"special\" folder.",			'',						true],
+		["",										"What does it mean? Why is it special?",				'',						true],
+		["",										"It's a <cy>PASSWORD</c> folder.",						'',						true],
+		["",										"Put something in there, and you might get something.",	'',						true],
+		["",										"... Might. Don't ask me for codes. I don't know any.",	'',						true],
+		["",										"Don't cheat.",											'',						true],
+		["",										"Sincerely, Trollnox.",									'',						true]
 	];
 	public static var achievementsMap:Map<String, Bool> = new Map<String, Bool>();
 
