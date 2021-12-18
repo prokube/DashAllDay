@@ -14,7 +14,7 @@ class Achievements {
 		["A Sip of Rage In the Morn'",				"Play in the morning. (Drink some orange juice first)",	'rageindamorn',	 		true],
 		["GIMME GIMME GIMME",						"Here you go :)",										'gimme',	 			true],
 		["To a Different World",					"Beat Pack 1 on Normal.",								'pack1',				false],
-		["Superb Suburbs",							"Beat Pack 2 on Normal.",								'pack2',				false],
+		["Shopkeeper Suburb",						"Beat Pack 2 on Normal.",								'pack2',				false],
 		["These Guys Are Pretty Chill",				"Beat Pack 3 on Normal.",								'pack3',				false],
 		["What Shards Should You Get??",			"Beat Gauntlet 1 on Normal.",							'gauntlet1',			false],
 		["Coins?!",									"Beat Story Mode.",										'coin1',				true],
