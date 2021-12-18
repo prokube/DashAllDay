@@ -20,16 +20,15 @@ class Achievements {
 		["Coins?!",									"Beat Story Mode.",										'coin1',				true], 
 		["Maybe behind that block?",				"Complete the Normal Mania songs.",						'coin2',				true], 
 		["I.. Need... MORE!",						"Find and beat Electrodynamix. Congratulations :)",		'coin3',				true], 
-		["We wants it!",							"You won't know if you keep peeking around like this.",	'coin4',				true], 
-		["We needs it!",							"Focus on other secrets first.",						'coin5',				true], 
-		["Must have the precious",					"Like, for example, that \"special\" folder.",			'coin6',				true], 
-		["They stole it from us!",					"What does it mean? Why is it special?",				'coin7',				true], 
-		["Where is it?! Where is it?!",				"I won't tell you, of course.",							'coin8',				true], 
-		["Thief, thief, thief!",					"You'll have to figure it out yourself.",				'coin9',				true], 
-		["My Precious...",							"I believe in you, though. You've made it this far.",	'coinA',				true], 
-		["There's more!?",							"Don't let me down.",									'coinB',				true], 
-		["Found it under a rock!",					"Sincerely, Trollnox.",									'coinC',				true], 
-		["",										"Also there aren't really this many coins LOL",			'coinD',				true], 
+		["",										"You won't know if you keep peeking around like this.",	'',					true], 
+		["",										"Focus on other secrets first.",						'',					true], 
+		["",										"Like, for example, that \"special\" folder.",			'',					true], 
+		["",										"What does it mean? Why is it special?",				'',					true], 
+		["",										"It's a <cy>PASSWORD</c> folder.",						'',					true], 
+		["",										"Put something in there, and you might get something.",	'',					true], 
+		["",										"... Might. Don't ask me for codes. I don't know any.",	'',					true], 
+		["",										"Don't cheat.",											'',					true], 
+		["",										"Sincerely, Trollnox.",									'',					true]
 	];
 	public static var achievementsMap:Map<String, Bool> = new Map<String, Bool>();
 
