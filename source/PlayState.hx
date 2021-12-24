@@ -3138,18 +3138,20 @@ class PlayState extends MusicBeatState
 		deathCounter = 0;
 		seenCutscene = false;
 
-		#if ACHIEVEMENTS_ALLOWED
-		if(achievementObj != null) {
-			return;
-		} else {
-			var achieve:String = checkForAchievement(['pack1', 'pack2', 'pack3', 'gauntlet1', 'coin1']);
+		// NO ACHIEVEMENTS ALLOWED
 
-			if(achieve != null) {
-				startAchievement(achieve);
-				return;
-			}
-		}
-		#end
+		// #if ACHIEVEMENTS_ALLOWED
+		// if(achievementObj != null) {
+		// 	return;
+		// } else {
+		// 	var achieve:String = checkForAchievement(['pack1', 'pack2', 'pack3', 'gauntlet1', 'coin1']);
+		//
+		// 	if(achieve != null) {
+		// 		startAchievement(achieve);
+		// 		return;
+		// 	}
+		// }
+		// #end
 
 		
 		#if LUA_ALLOWED

@@ -2,7 +2,7 @@
 <project>
 	<!-- _________________________ Application Settings _________________________ -->
 
-	<app title="Friday Night Funkin': Dash All Day" file="DashAllDay" packageName="com.prokubehaxe.dashallday" package="com.prokubehaxe.dashallday" main="Main" version="1.0.0-DEMO" company="ProkubeHaxe" />
+	<app title="Friday Night Funkin': Dash All Day DEMO" file="DashAllDay" packageName="com.prokubehaxe.dashallday" package="com.prokubehaxe.dashallday" main="Main" version="1.0.0-DEMO" company="ProkubeHaxe" />
 
 	<!--Switch Export with Unique ApplicationID and Icon-->
 	<set name="APP_ID" value="0x0100f6c013bbc000" />
@@ -33,6 +33,8 @@
 	<set name="BUILD_DIR" value="export/32bit" if="32bits" />
 
 	<classpath name="source" />
+
+	<assets path="assets" embed="true"/> <!-- Don't uhhh don't remove this pwease o-o -->
 
 	<assets path="assets/preload" rename="assets" exclude="*.ogg" if="web"/>
 	<assets path="assets/preload" rename="assets" exclude="*.mp3"  unless="web"/>
