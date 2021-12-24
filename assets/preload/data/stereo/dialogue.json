@@ -5,14 +5,21 @@
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "talk",
-			"text": "coolswag"
+			"text": "No dialogue yet?"
 		},
 		{
 			"speed": 0.05,
 			"portrait": "gf",
 			"boxState": "normal",
 			"expression": "talk",
-			"text": "the"
+			"text": "Prokube didn't put portraits in yet."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "bruh"
 		}
 	]
 }

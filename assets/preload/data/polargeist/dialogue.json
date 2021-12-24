@@ -5,14 +5,21 @@
 			"portrait": "bf",
 			"boxState": "angry",
 			"expression": "talk",
-			"text": "oh shit he's gone super saiyan"
+			"text": "So is this the part where he freaks out or something?"
 		},
 		{
 			"speed": 0.05,
 			"portrait": "gf",
 			"boxState": "normal",
 			"expression": "talk",
-			"text": "A"
+			"text": "Yeah"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Good Luck lol"
 		}
 	]
 }
