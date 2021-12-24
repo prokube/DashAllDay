@@ -232,10 +232,11 @@ class FreeplayState extends MusicBeatState
 		var downP = controls.UI_DOWN_P;
 		var accepted = controls.ACCEPT;
 		var space = FlxG.keys.justPressed.SPACE;
+		var mod = FlxG.keys.justPressed.SHIFT;
 
 		var shiftMult:Int = 1;
-		if(FlxG.keys.pressed.SHIFT) shiftMult = 3;
-
+		if (mod)
+			openSubState(new ModifiersSubState());
 		if (upP)
 		{
 			changeSelection(-shiftMult);
