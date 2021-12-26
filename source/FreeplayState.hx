@@ -1,8 +1,5 @@
 package;
 
-#if desktop
-import Discord.DiscordClient;
-#end
 import flash.text.TextField;
 import flixel.FlxG;
 import flixel.FlxSprite;
@@ -47,16 +44,17 @@ class FreeplayState extends MusicBeatState
 
 	override function create()
 	{
+		trace("okayyyy");
 		#if MODS_ALLOWED
 		Paths.destroyLoadedImages();
 		#end
+		trace("yeah ok destroyed images");
 		WeekData.reloadWeekFiles(false);
-		#if desktop
-		// Updating Discord Rich Presence
-		DiscordClient.changePresence("In the Menus", null);
-		#end
+		trace("yeah yeah reloaded");
 
 		// checkSpecials();
+
+		trace("might crash :))");
 		
 		for (i in 0...WeekData.weeksList.length) {
 			var leWeek:WeekData = WeekData.weeksLoaded.get(WeekData.weeksList[i]);

@@ -61,6 +61,7 @@ class WeekData {
 
 	// HELP: Is there any way to convert a WeekFile to WeekData without having to put all variables there manually? I'm kind of a noob in haxe lmao
 	public function new(weekFile:WeekFile) {
+		trace("yeah yeah new boi");
 		songs = weekFile.songs;
 		weekCharacters = weekFile.weekCharacters;
 		weekBackground = weekFile.weekBackground;
@@ -71,12 +72,14 @@ class WeekData {
 		startUnlocked = weekFile.startUnlocked;
 		hideStoryMode = weekFile.hideStoryMode;
 		hideFreeplay = weekFile.hideFreeplay;
+		trace("what");
 	}
 
 	public static function reloadWeekFiles(isStoryMode:Null<Bool> = false)
 	{
 		weeksList = [];
 		weeksLoaded.clear();
+		trace("here- here- here we go");
 		#if MODS_ALLOWED
 		var directories:Array<String> = [Paths.mods(), Paths.getPreloadPath()];
 		var originalLength:Int = directories.length;
@@ -94,6 +97,7 @@ class WeekData {
 		var originalLength:Int = directories.length;
 		#end
 
+		trace("haha funny variable name LOL !!! ");
 		var sexList:Array<String> = CoolUtil.coolTextFile(Paths.getPreloadPath('weeks/weekList.txt'));
 		for (i in 0...sexList.length) {
 			for (j in 0...directories.length) {
@@ -119,6 +123,7 @@ class WeekData {
 		}
 
 		#if MODS_ALLOWED
+		trace("alright lets go");
 		for (i in 0...directories.length) {
 			var directory:String = directories[i] + 'weeks/';
 			if(FileSystem.exists(directory)) {
@@ -128,8 +133,10 @@ class WeekData {
 						var weekToCheck:String = file.substr(0, file.length - 5);
 						if(!weeksLoaded.exists(weekToCheck)) {
 							var week:WeekFile = getWeekFile(path);
+							trace("okay got the actual week file?");
 							if(week != null) {
 								var weekFile:WeekData = new WeekData(week);
+								trace('makin the file :O');
 								if(i >= originalLength) {
 									weekFile.folder = directories[i].substring(Paths.mods().length, directories[i].length-1);
 								}
@@ -137,6 +144,7 @@ class WeekData {
 								if((isStoryMode && !weekFile.hideStoryMode) || (!isStoryMode && !weekFile.hideFreeplay)) {
 									weeksLoaded.set(weekToCheck, weekFile);
 									weeksList.push(weekToCheck);
+									trace("yoooo we added it");
 								}
 							}
 						}
@@ -149,6 +157,7 @@ class WeekData {
 
 	private static function getWeekFile(path:String):WeekFile {
 		var rawJson:String = null;
+		trace("lets get it");
 		#if MODS_ALLOWED
 		if(FileSystem.exists(path)) {
 			rawJson = File.getContent(path);
@@ -159,7 +168,9 @@ class WeekData {
 		}
 		#end
 
+		trace("WE GOT IT");
 		if(rawJson != null && rawJson.length > 0) {
+			trace('WE GOT IT FOR REAL');
 			return cast Json.parse(rawJson);
 		}
 		return null;
