@@ -465,50 +465,50 @@ class TitleState extends MusicBeatState
 				case 1:
 					createCoolText(['Psych Engine by'], 45);
 				// credTextShit.visible = true;
-				case 3:
+				case 2:
 					addMoreText('Shadow Mario', 45);
 					addMoreText('RiverOaken', 45);
 				// credTextShit.text += '\npresent...';
 				// credTextShit.addText();
-				case 4:
+				case 3:
 					deleteCoolText();
 				// credTextShit.visible = false;
 				// credTextShit.text = 'In association \nwith';
 				// credTextShit.screenCenter();
-				case 5:
+				case 4:
 					createCoolText(['This is a mod to'], -60);
-				case 7:
+				case 6:
 					addMoreText('This game right below lol', -60);
 					logoSpr.visible = true;
 				// credTextShit.text += '\nNewgrounds';
-				case 8:
+				case 7:
 					deleteCoolText();
 					logoSpr.visible = false;
 				// credTextShit.visible = false;
 
 				// credTextShit.text = 'Shoutouts Tom Fulp';
 				// credTextShit.screenCenter();
-				case 9:
+				case 8:
 					createCoolText([curWacky[0]]);
 				// credTextShit.visible = true;
-				case 11:
+				case 10:
 					addMoreText(curWacky[1]);
 				// credTextShit.text += '\nlmao';
-				case 12:
+				case 11:
 					deleteCoolText();
 				// credTextShit.visible = false;
 				// credTextShit.text = "Friday";
 				// credTextShit.screenCenter();
-				case 13:
+				case 12:
 					addMoreText('Dash');
 				// credTextShit.visible = true;
-				case 14:
+				case 13:
 					addMoreText('All');
 				// credTextShit.text += '\nNight';
-				case 15:
+				case 14:
 					addMoreText('Day'); // credTextShit.text += '\nFunkin';
 
-				case 16:
+				case 15:
 					skipIntro();
 			}
 		}
