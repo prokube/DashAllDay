@@ -348,9 +348,11 @@ class PlayState extends MusicBeatState
 					curStage = 'stage';
 			}
 		}
-
+		
+		trace("fuckhead stage grabber");
 		var stageData:StageFile = StageData.getStageFile(curStage);
 		if(stageData == null) { //Stage couldn't be found, create a dummy stage for preventing a crash
+			trace("oh fuck no stage?");
 			stageData = {
 				directory: "",
 				defaultZoom: 0.9,
@@ -362,6 +364,7 @@ class PlayState extends MusicBeatState
 			};
 		}
 
+		trace("stage gotted");
 		defaultCamZoom = stageData.defaultZoom;
 		isPixelStage = stageData.isPixelStage;
 		BF_X = stageData.boyfriend[0];
@@ -370,6 +373,8 @@ class PlayState extends MusicBeatState
 		GF_Y = stageData.girlfriend[1];
 		DAD_X = stageData.opponent[0];
 		DAD_Y = stageData.opponent[1];
+
+		trace("yeah yeah positions");
 
 		boyfriendGroup = new FlxSpriteGroup(BF_X, BF_Y);
 		dadGroup = new FlxSpriteGroup(DAD_X, DAD_Y);
@@ -650,6 +655,7 @@ class PlayState extends MusicBeatState
 				}
 		}
 
+		trace("added spriteys");
 		if(isPixelStage) {
 			introSoundsSuffix = '-pixel';
 		}
@@ -1053,6 +1059,8 @@ class PlayState extends MusicBeatState
 
 		FlxG.stage.addEventListener(KeyboardEvent.KEY_DOWN,handleInput);
 		FlxG.stage.addEventListener(KeyboardEvent.KEY_UP, releaseInput);
+
+		trace("uhhh wtf dude???");
 		
 		super.create();
 	}
@@ -3090,18 +3098,18 @@ class PlayState extends MusicBeatState
 
 		// NO ACHIEVEMENTS ALLOWED
 
-		// #if ACHIEVEMENTS_ALLOWED
-		// if(achievementObj != null) {
-		// 	return;
-		// } else {
-		// 	var achieve:String = checkForAchievement(['pack1', 'pack2', 'pack3', 'gauntlet1', 'coin1']);
-		//
-		// 	if(achieve != null) {
-		// 		startAchievement(achieve);
-		// 		return;
-		// 	}
-		// }
-		// #end
+		#if ACHIEVEMENTS_ALLOWED
+		if(achievementObj != null) {
+			return;
+		} else {
+			var achieve:String = checkForAchievement(['pack1', 'pack2', 'pack3', 'gauntlet1', 'coin1']);
+	
+			if(achieve != null) {
+				startAchievement(achieve);
+				return;
+			}
+		}
+		#end
 
 		
 		#if LUA_ALLOWED

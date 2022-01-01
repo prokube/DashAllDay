@@ -60,7 +60,7 @@ class StageData {
 		}
 	}
 
-	public static function getStageFile(stage:String):StageFile {
+	public static function getStageFile(stage:String = "stage"):StageFile {
 		var rawJson:String = null;
 		var path:String = Paths.getPreloadPath('stages/' + stage + '.json');
 
@@ -69,6 +69,7 @@ class StageData {
 		if(FileSystem.exists(modPath)) {
 			rawJson = File.getContent(modPath);
 		} else if(FileSystem.exists(path)) {
+			trace("it exists??");
 			rawJson = File.getContent(path);
 		}
 		#else
